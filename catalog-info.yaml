@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gzm8115nt-python-gitops
+  description: This is GitOps manifest for gzm8115nt-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=gzm8115nt-python
+    backstage.io/kubernetes-id: gzm8115nt-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: gzm8115nt-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gzm8115nt-python
